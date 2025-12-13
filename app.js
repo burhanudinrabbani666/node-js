@@ -29,12 +29,13 @@ const server = http.createServer((req, res) => {
       // make sure this code being executed
       const parsedBody = Buffer.concat(body).toString();
       const userInput = parsedBody.split("=")[1];
-      fs.writeFileSync("user-input.txt", userInput);
 
-      res.statusCode = 302;
-      res.setHeader("Location", "/");
+      fs.writeFile("user-input.txt", userInput, (err) => {
+        res.statusCode = 302;
+        res.setHeader("Location", "/");
 
-      return res.end();
+        return res.end();
+      });
     });
   }
 
