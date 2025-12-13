@@ -15,7 +15,7 @@ function requestHandler(req, res) {
     return res.end();
   }
 
-  // Http://localhost:3000/message
+  // Http://localhost:3000/messages
   if (url === "/message" && method === "POST") {
     const body = [];
     req.on("data", (chunk) => {
