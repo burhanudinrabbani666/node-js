@@ -1,22 +1,25 @@
 // Framework / 3rd Party
 const express = require("express");
+const bodyParser = require("body-parser");
 
 // App
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
 
 //Middleware
-app.use("/", (req, res, next) => {
-  console.log("this Always Run");
-  next();
-});
-
 app.use("/add-product", (req, res, next) => {
-  console.log("in The middleWare");
-  res.send(`<h1>Add Prodoct page</h1>`);
+  res.send(
+    `<form action="/product" method="POST"><input type="text" name="title" ><button type="submit">Add Button</button>
+    </form>`
+  );
+});
+
+app.use("/product", (req, res, next) => {
+  console.log(req.body);
+  res.redirect("/");
 });
 
 app.use("/", (req, res, next) => {
-  console.log("in Another The middleWare");
   res.send(`<h1>Hello From Express</h1>`);
 });
 

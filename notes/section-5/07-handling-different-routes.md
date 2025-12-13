@@ -11,7 +11,9 @@ app.use("/add-product", (req, res, next) => {
 // Put this path in the bottom to make last filtering
 app.use("/", (req, res, next) => {
   console.log("in Another The middleWare");
-  res.send(`<h1>Hello From Express</h1>`);
+  res.send(
+    `<from action="action" method="POST"><input type="text" name="title" placeholder="Your stuff ...."><button type="submit">Add Button</button></from>`
+  );
 });
 ```
 
