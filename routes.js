@@ -1,34 +1,3 @@
-## Using Node Modules
-
-separate components with app.js as the main script
-
-### NodeJS Exports modules
-
-[Geeks: NodeJS Exports modules](https://www.geeksforgeeks.org/node-js/node-js-export-module/)
-
-In NodeJS, module.exports is used to share functions, objects, or values from one file to the other file so that other files can use them. This is an essential part of organizing and reusing code across different parts of your application, making it easier to manage and maintain.
-
-Here’s how exporting modules in NodeJS can help:
-
-- Share code between files easily.
-- Organize projects into smaller files.
-- Reuse code without repetition.
-- Control access to file contents.
-
-> app.js
-
-```js
-const http = require("http");
-const routes = require("./routes.js");
-
-const server = http.createServer(routes);
-
-server.listen(3000); //http://localhost:3000/
-```
-
-> routes.js
-
-```js
 const fs = require("fs");
 
 function requestHandler(req, res) {
@@ -77,6 +46,3 @@ function requestHandler(req, res) {
 }
 
 module.exports = requestHandler;
-```
-
-[Next: Section 4](../section-4/)
