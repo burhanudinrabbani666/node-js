@@ -6,6 +6,8 @@ const server = http.createServer((req, res) => {
   // http://localhost:3000/
   const url = req.url;
   const method = req.method;
+
+  // Http://localhost:3000/
   if (url === "/") {
     res.write("<html>");
     res.write("<head><title>Enter message</title></head>");
@@ -23,16 +25,17 @@ const server = http.createServer((req, res) => {
       console.log(chunk);
       body.push(chunk);
     });
-    req.on("end", () => {
+    return req.on("end", () => {
+      // make sure this code being executed
       const parsedBody = Buffer.concat(body).toString();
       const userInput = parsedBody.split("=")[1];
       fs.writeFileSync("user-input.txt", userInput);
+
+      res.statusCode = 302;
+      res.setHeader("Location", "/");
+
+      return res.end();
     });
-
-    res.statusCode = 302;
-    res.setHeader("Location", "/");
-
-    return res.end();
   }
 
   res.setHeader("Content-Type", "text/html");
