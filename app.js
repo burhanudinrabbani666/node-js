@@ -2,27 +2,16 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
+//route
+const adminRoute = require("./routes/admin.js");
+const shopRoute = require("./routes/shop.js");
 // App
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 
-//Middleware
-app.use("/add-product", (req, res, next) => {
-  res.send(
-    `<form action="/product" method="POST"><input type="text" name="title" ><button type="submit">Add Button</button>
-    </form>`
-  );
-});
-
-// Only after post method
-app.post("/product", (req, res, next) => {
-  console.log(req.body, "/product");
-  res.redirect("/");
-});
-
-app.use("/", (req, res, next) => {
-  res.send(`<h1>Hello From Express</h1>`);
-});
+// Middleware
+app.use(adminRoute);
+app.use(shopRoute);
 
 // Server
 app.listen(3000);
