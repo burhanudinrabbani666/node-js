@@ -1,6 +1,11 @@
+// Node build-in
 const http = require("http");
-const routes = require("./routes.js");
 
-const server = http.createServer(routes);
+// Framework / 3rd Party
+const express = require("express");
+
+const app = express();
+
+const server = http.createServer(app);
 
 server.listen(3000); //http://localhost:3000/

@@ -19,5 +19,8 @@
   "homepage": "https://github.com/burhanudinrabbani666/node-js#readme",
   "devDependencies": {
     "nodemon": "^3.1.11"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }
