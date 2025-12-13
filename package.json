@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/burhanudinrabbani666/node-js/issues"
   },
-  "homepage": "https://github.com/burhanudinrabbani666/node-js#readme"
+  "homepage": "https://github.com/burhanudinrabbani666/node-js#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
 }
