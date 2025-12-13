@@ -28,3 +28,5 @@ app.use((req, res, next) => {
 const server = http.createServer(app);
 server.listen(3000); //http://localhost:3000/
 ```
+
+[Next: How middleware Work](./05-how-middleware-work.md)

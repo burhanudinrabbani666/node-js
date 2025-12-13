@@ -10,12 +10,12 @@ const app = express();
 //Middleware
 app.use((req, res, next) => {
   console.log("in The middleWare");
-
-  next(); // for Continue to another Middleware ⬇️
+  next();
 });
 
 app.use((req, res, next) => {
   console.log("in Another The middleWare");
+  res.send(`<h1>Hello From Express</h1>`);
 });
 
 // Server
