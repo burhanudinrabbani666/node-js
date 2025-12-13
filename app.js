@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
     res.write("<html>");
     res.write("<head><title>Enter message</title></head>");
     res.write(
-      `<body><form action="/message" method="POST"><input type="text" name="message"><button type="submit">Send</button></form></body>`
+      `<body><form action="/message" method="POST"><input type="text" name="user-input"><button type="submit">Send</button></form></body>`
     );
     res.write("</html>");
     return res.end();
@@ -18,7 +18,16 @@ const server = http.createServer((req, res) => {
 
   // Http://localhost:3000/message
   if (url === "/message" && method === "POST") {
-    fs.writeFileSync("message.txt", "Hello World");
+    const body = [];
+    req.on("data", (chunk) => {
+      console.log(chunk);
+      body.push(chunk);
+    });
+    req.on("end", () => {
+      const parsedBody = Buffer.concat(body).toString();
+      const userInput = parsedBody.split("=")[1];
+      fs.writeFileSync("user-input.txt", userInput);
+    });
 
     res.statusCode = 302;
     res.setHeader("Location", "/");
