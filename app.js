@@ -14,8 +14,9 @@ app.use("/add-product", (req, res, next) => {
   );
 });
 
-app.use("/product", (req, res, next) => {
-  console.log(req.body);
+// Only after post method
+app.post("/product", (req, res, next) => {
+  console.log(req.body, "/product");
   res.redirect("/");
 });
 
