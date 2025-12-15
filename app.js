@@ -12,8 +12,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Middleware
-app.use("/admin", adminRoute);
 app.use(shopRoute);
+app.use("/admin", adminRoute);
 
 app.use("/", (req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, "views", "404.html"));

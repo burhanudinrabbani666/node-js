@@ -34,4 +34,4 @@ router.get("/", (req, res, next) => {
 module.exports = router;
 ```
 
-[Next: Adding Error 404](./11-adding-404-error-page)
+[Next: Adding Error 404](./11-adding-404-error-page.md)
