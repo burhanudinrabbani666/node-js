@@ -13,7 +13,14 @@ app.use(bodyParser.urlencoded({ extended: false })); // For take Submissions
 app.use(express.static(path.join(__dirname, "public"))); // CSS
 
 // express set to pug
-app.engine("handlebars", expressHbs());
+app.engine(
+  "handlebars",
+  expressHbs.engine({
+    layoutsDir: "views/layouts/",
+    defaultLayout: "main-layout",
+    extname: "handlebars",
+  })
+);
 app.set("view engine", "handlebars");
 app.set("views", "views");
 
