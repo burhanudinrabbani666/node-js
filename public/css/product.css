@@ -1,40 +1,25 @@
 .product-form {
-  width: 30rem;
+  width: 20rem;
   max-width: 90%;
   margin: auto;
 }
-.form-control {
-  margin: 1rem 0;
+
+.product-item {
+  width: 20rem;
+  max-width: 95%;
 }
 
-.form-control label,
-.form-control input {
-  display: block;
-  width: 100%;
+.product__title {
+  font-size: 1.2rem;
+  text-align: center;
 }
 
-.form-control input {
-  border: 1px solid rgb(71, 131, 34);
-  font: inherit;
-  border-radius: 10px;
-  padding: 4px 12px;
+.product__price {
+  text-align: center;
+  color: #4d4d4d;
+  margin-bottom: 0.5rem;
 }
 
-.form-control input:focus {
-  outline: none;
-}
-button {
-  font: inherit;
-  border: 1px solid rgb(71, 131, 34);
-  background-color: rgb(71, 131, 34);
-  color: white;
-  border-radius: 10px;
-  cursor: pointer;
-  padding: 4px 12px;
-}
-
-button:active,
-button:hover {
-  background-color: rgb(35, 90, 0);
-  color: white;
+.product__description {
+  text-align: center;
 }

@@ -4,16 +4,20 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 //route
-const adminRoute = require("./routes/admin.js");
-const shopRoute = require("./routes/shop.js");
+const adminData = require("./routes/admin");
+const shopRoute = require("./routes/shop");
 // App
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(bodyParser.urlencoded({ extended: false })); // For take Submissions
+app.use(express.static(path.join(__dirname, "public"))); // CSS
+
+// express set to pug
+app.set("view engine", "pug");
+app.set("views", "views");
 
 // Middleware
 app.use(shopRoute);
-app.use("/admin", adminRoute);
+app.use("/admin", adminData.routes);
 
 app.use("/", (req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, "views", "404.html"));
