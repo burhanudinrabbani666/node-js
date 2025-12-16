@@ -2,6 +2,7 @@
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
+const expressHbs = require("express-handlebars");
 
 //route
 const adminData = require("./routes/admin");
@@ -12,7 +13,8 @@ app.use(bodyParser.urlencoded({ extended: false })); // For take Submissions
 app.use(express.static(path.join(__dirname, "public"))); // CSS
 
 // express set to pug
-app.set("view engine", "pug");
+app.engine("handlebars", expressHbs());
+app.set("view engine", "handlebars");
 app.set("views", "views");
 
 // Middleware
