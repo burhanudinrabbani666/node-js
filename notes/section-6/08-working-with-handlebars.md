@@ -54,3 +54,5 @@ res.render("shop", {
 
 {{/if}}
 ```
+
+[Next: Converting to handlebar](./09-converting-our-project-tohandlebar.md)

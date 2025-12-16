@@ -29,3 +29,5 @@ header.main-header
           li.main-header__item
             a(href="/admin/add-product", class=(path === '/admin/add-product' ? "active" : "")) Add Product
 ```
+
+[Next: Working with handlebars](./08-working-with-handlebars.md)
