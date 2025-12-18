@@ -1,4 +1,5 @@
-const products = [];
+// Importing models
+const Product = require("../models/product");
 
 exports.getAddProduct = (req, res, next) => {
   res.render("add-product", {
@@ -11,11 +12,19 @@ exports.getAddProduct = (req, res, next) => {
 };
 
 exports.postAddProduct = (req, res, next) => {
-  products.push({ title: req.body.title });
+  // save in variable
+  const product = new Product(req.body.title);
+
+  // Using Save Method
+  product.save();
+
   res.redirect("/");
 };
 
 exports.getProduct = (req, res, next) => {
+  // Render data
+  const products = Product.fetchAll();
+
   res.render("shop", {
     prods: products,
     pageTitle: "Shop",

@@ -2,6 +2,7 @@
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
+const errorControler = require("./controllers/404");
 
 //route
 const adminRoutes = require("./routes/admin");
@@ -18,9 +19,7 @@ app.set("views", "views");
 app.use(shopRoute);
 app.use("/admin", adminRoutes);
 
-app.use((req, res, next) => {
-  res.status(404).render("404", { pageTitle: "Page Not Found", path: "" });
-});
+app.use(errorControler.errorHandling);
 
 // Server
 app.listen(3000);
