@@ -4,7 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 //route
-const adminData = require("./routes/admin");
+const adminRoutes = require("./routes/admin");
 const shopRoute = require("./routes/shop");
 // App
 const app = express();
@@ -16,7 +16,7 @@ app.set("views", "views");
 
 // Middleware
 app.use(shopRoute);
-app.use("/admin", adminData.routes);
+app.use("/admin", adminRoutes);
 
 app.use((req, res, next) => {
   res.status(404).render("404", { pageTitle: "Page Not Found", path: "" });
