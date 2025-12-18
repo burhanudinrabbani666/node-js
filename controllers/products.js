@@ -22,15 +22,17 @@ exports.postAddProduct = (req, res, next) => {
 };
 
 exports.getProduct = (req, res, next) => {
+  console.log("REQUEST / START");
   // Render data
-  const products = Product.fetchAll();
-
-  res.render("shop", {
-    prods: products,
-    pageTitle: "Shop",
-    path: "/",
-    hasProduct: products.length > 0,
-    activeShop: true,
-    productCSS: true,
+  Product.fetchAll((products) => {
+    console.log("RENDER");
+    res.render("shop", {
+      prods: products,
+      pageTitle: "Shop",
+      path: "/",
+      hasProduct: products.length > 0,
+      activeShop: true,
+      productCSS: true,
+    });
   });
 };

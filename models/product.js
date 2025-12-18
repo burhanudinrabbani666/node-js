@@ -28,7 +28,7 @@ module.exports = class Product {
     });
   }
 
-  static fetchAll() {
+  static fetchAll(cb) {
     const pathData = path.join(
       path.dirname(process.mainModule.filename),
       "data",
@@ -37,10 +37,10 @@ module.exports = class Product {
 
     fs.readFile(pathData, (err, fileContent) => {
       if (err) {
-        return [];
+        cb([]);
       }
 
-      return JSON.parse(fileContent);
+      cb(JSON.parse(fileContent));
     });
   }
 };
