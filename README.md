@@ -37,7 +37,7 @@ I hope my Node.js learning journey can be helpful to others as well.
 | 3       | [Understanding the Basics]()                           | ✅ Done |
 | 4       | [Improved Development Workflow and Debugging]()        | ✅ Done |
 | 5       | [Working with Express.js ]()                           | ✅ Done |
-| 6       | [Working with Dynamic Content & Templating Engines]()  |         |
+| 6       | [Working with Dynamic Content & Templating Engines]()  | ✅ Done |
 | 7       | [The Model View Controller (MVC)]()                    |         |
 | 8       | [Optional: Enhancing the App]()                        |         |
 | 9       | [Dynamic Routes & Advanced Models]()                   |         |
