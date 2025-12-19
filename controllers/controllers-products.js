@@ -1,5 +1,5 @@
 // Importing models
-const Product = require("../models/product");
+const Product = require("../models/models-product");
 
 exports.getAddProduct = (req, res, next) => {
   res.render("add-product", {
@@ -22,10 +22,8 @@ exports.postAddProduct = (req, res, next) => {
 };
 
 exports.getProduct = (req, res, next) => {
-  console.log("REQUEST / START");
   // Render data
   Product.fetchAll((products) => {
-    console.log("RENDER");
     res.render("shop", {
       prods: products,
       pageTitle: "Shop",
