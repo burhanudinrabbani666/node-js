@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include('includes/head') %>
+    <%- include('../includes/head') %>
   </head>
 
   <body>
-    <%- include('includes/navigation') %>
+    <%- include('../includes/navigation') %>
 
     <main>
       <form class="product-form" action="/admin/add-product" method="POST">
@@ -14,7 +14,7 @@
           <input type="text" name="title" id="title" />
         </div>
 
-        <button class="btn" type="submit">Add Hello</button>
+        <button class="btn" type="submit">Add Product</button>
       </form>
     </main>
   </body>
