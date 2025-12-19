@@ -51,3 +51,12 @@ exports.getCheckout = (req, res, next) => {
     productCSS: true,
   });
 };
+
+exports.getOrders = (req, res, next) => {
+  res.render("shop/orders", {
+    pageTitle: "Orders Now 💥",
+    path: "/orders",
+    activeShop: true,
+    productCSS: true,
+  });
+};
