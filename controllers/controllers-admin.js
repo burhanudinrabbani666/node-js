@@ -17,7 +17,7 @@ exports.postAddProduct = (req, res, next) => {
   const description = req.body.description;
 
   // save in variable
-  const product = new Product(title, imageUrl, price, description);
+  const product = new Product(title, imageUrl, description, price);
 
   // Using Save Method
   product.save();
