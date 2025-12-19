@@ -14,3 +14,5 @@ list file baru:
   - checkout.ejs
   - index.ejs
   - product-list.ejs
+
+[Next: Working With navigation](./02-working-with-navigation.md)

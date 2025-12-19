@@ -1,4 +1,3 @@
-// Importing models
 const Product = require("../models/models-product");
 
 exports.getAddProduct = (req, res, next) => {
@@ -21,16 +20,12 @@ exports.postAddProduct = (req, res, next) => {
   res.redirect("/");
 };
 
-exports.getProduct = (req, res, next) => {
-  // Render data
+exports.getProducts = (req, res, next) => {
   Product.fetchAll((products) => {
-    res.render("shop/product-list", {
+    res.render("admin/products", {
       prods: products,
-      pageTitle: "Shop",
-      path: "/",
-      hasProduct: products.length > 0,
-      activeShop: true,
-      productCSS: true,
+      pageTitle: "Admin Products",
+      path: "/admin/products",
     });
   });
 };
