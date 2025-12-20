@@ -6,10 +6,13 @@ exports.getProduct = (req, res, next) => {
   const prodId = req.params.productId;
 
   Product.findById(prodId, (product) => {
-    console.log(product);
+    res.render("shop/product-detail", {
+      // make single data
+      product: product,
+      pageTitle: product.title,
+      path: "/products",
+    });
   });
-
-  res.redirect("/");
 };
 
 exports.getProducts = (req, res, next) => {
@@ -42,6 +45,13 @@ exports.getCart = (req, res, next) => {
     activeShop: true,
     productCSS: true,
   });
+};
+
+exports.postCart = (req, res, next) => {
+  const prodId = req.body.productId;
+  console.log(prodId);
+
+  res.redirect("/cart");
 };
 
 exports.getCheckout = (req, res, next) => {
