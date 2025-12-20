@@ -4,7 +4,10 @@ const Product = require("../models/models-product");
 exports.getProduct = (req, res, next) => {
   // Render data
   const prodId = req.params.productId;
-  console.log(prodId);
+
+  Product.findById(prodId, (product) => {
+    console.log(product);
+  });
 
   res.redirect("/");
 };

@@ -1,9 +1,1 @@
-[
-  {
-    "id": "8712837123",
-    "title": "Test",
-    "imageUrl": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ym9va3xlbnwwfHwwfHx8MA%3D%3D",
-    "description": "This is test\r\n",
-    "price": "19.99"
-  }
-]
+[{"id":"8712837123","title":"Test","imageUrl":"https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ym9va3xlbnwwfHwwfHx8MA%3D%3D","description":"This is test\r\n","price":"19.99"},{"title":"Another","imageUrl":"https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Ym9va3xlbnwwfHwwfHx8MA%3D%3D","description":"Poetry Book","price":"20.00","id":"fc9329f5-a904-4e95-92e0-3d10473e997d"}]
