@@ -3,6 +3,13 @@ const Product = require("../models/models-product");
 
 exports.getProduct = (req, res, next) => {
   // Render data
+  const prodId = req.params.productId;
+  console.log(prodId);
+
+  res.redirect("/");
+};
+
+exports.getProducts = (req, res, next) => {
   Product.fetchAll((products) => {
     res.render("shop/product-list", {
       prods: products,
@@ -12,15 +19,6 @@ exports.getProduct = (req, res, next) => {
       activeShop: true,
       productCSS: true,
     });
-  });
-};
-
-exports.getProducts = (req, res, next) => {
-  res.render("shop/products-list", {
-    pageTitle: "Products",
-    path: "/products-list",
-    activeShop: true,
-    productCSS: true,
   });
 };
 
