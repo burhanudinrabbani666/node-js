@@ -26,6 +26,8 @@ module.exports = class Product {
   }
 
   save() {
+    this.id = crypto.randomUUID();
+
     getProductsFromFile((products) => {
       products.push(this);
 

@@ -7,7 +7,7 @@ exports.getProduct = (req, res, next) => {
     res.render("shop/product-list", {
       prods: products,
       pageTitle: "Shop",
-      path: "/",
+      path: "/products",
       hasProduct: products.length > 0,
       activeShop: true,
       productCSS: true,
@@ -16,9 +16,9 @@ exports.getProduct = (req, res, next) => {
 };
 
 exports.getProducts = (req, res, next) => {
-  res.render("shop/products", {
+  res.render("shop/products-list", {
     pageTitle: "Products",
-    path: "/products",
+    path: "/products-list",
     activeShop: true,
     productCSS: true,
   });
